@@ -1,6 +1,6 @@
 export type Author = {
   name: string;
-  role?: "first" | "second" | "advisor";
+  role?: "first" | "second" | "corresponding";
   link?: string;
 };
 
@@ -23,6 +23,7 @@ export type Publication = {
 
 type AcademicProfile = {
   affiliation: string;
+  subtitle: string;
   introduction: string[];
   interests: { title: string; description: string }[];
   publications: Publication[];
@@ -36,6 +37,7 @@ type AcademicProfile = {
 
 export const academic: AcademicProfile = {
   "affiliation": "Sichuan University",
+  "subtitle": "Research intern at PDAIS",
   "introduction": [
     "I am an undergraduate at Sichuan University, China, working on AI for databases (AI4DB).",
     "My research explores how language models can help people query data and make database systems more efficient. I am also an open-source enthusiast."
@@ -88,7 +90,8 @@ export const academic: AcademicProfile = {
           "name": "Jianguo Wang"
         },
         {
-          "name": "Mingjie Tang"
+          "name": "Mingjie Tang",
+          "role": "corresponding"
         }
       ],
       "year": 2025,

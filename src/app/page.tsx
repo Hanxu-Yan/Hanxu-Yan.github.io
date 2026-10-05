@@ -24,7 +24,7 @@ export default function Home() {
             <Image src={person.avatar} alt="Hanxu Yan's cat avatar from GitHub" width={220} height={220} priority className="profile-pic" />
             <div className="hero-meta">
               <h1 className="meta-name">{person.name}</h1>
-              <div className="meta-subtitle">{academic.affiliation}</div>
+              <div className="meta-subtitle">{academic.subtitle}</div>
               <div className="contact-small">
                 <a href={`mailto:${person.email}`} className="icon-link" aria-label="Email" title="Email"><MdEmail aria-hidden="true" /></a>
                 {social.map((item) => {

@@ -19,7 +19,7 @@ export function Publications() {
           ))}
         </div>
       </div>
-      <p className="publications-info-small">* indicates equal contribution, and † denotes the advising professor.</p>
+      <p className="publications-info-small">* indicates equal contribution, and † denotes the corresponding author.</p>
       <div className="publications-list" id="publication-list" aria-live="polite">
         {papers.map((paper) => (
           <article key={paper.id} className="publication-card" id={paper.id}>
@@ -31,9 +31,9 @@ export function Publications() {
               <div className="publication-title-wrapper"><h3 className="publication-title"><a href={paper.paper} target="_blank" rel="noopener noreferrer">{paper.title}</a></h3></div>
               <p className="publication-authors">
                 {paper.authors.map((author, index) => {
-                  const symbol = author.role === "first" ? "*" : author.role === "second" ? "**" : author.role === "advisor" ? "†" : "";
+                  const symbol = author.role === "first" ? "*" : author.role === "second" ? "**" : author.role === "corresponding" ? "†" : "";
                   const name = author.name === person.name ? <strong className="author-self">{author.name}{symbol}</strong> : <>{author.name}{symbol}</>;
-                  return <span key={author.name}>{author.link ? <a href={author.link} target="_blank" rel="noopener noreferrer" className="author-link">{name}</a> : name}{index < paper.authors.length - 1 && ", "}</span>;
+                  return <span key={author.name} title={author.role === "corresponding" ? "Corresponding author" : undefined}>{author.link ? <a href={author.link} target="_blank" rel="noopener noreferrer" className="author-link">{name}</a> : name}{index < paper.authors.length - 1 && ", "}</span>;
                 })}
               </p>
               <div className="publication-tags">{paper.tags.map((tag) => <span key={tag} className={tag === "Selected" ? "rainbow-tag-all" : "tag-item-show"}>#{tag}</span>)}</div>
