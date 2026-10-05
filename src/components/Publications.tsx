@@ -8,7 +8,6 @@ import { person } from "@/resources/content";
 export function Publications() {
   const [selectedTag, setSelectedTag] = useState("");
   const papers = selectedTag ? academic.publications.filter((paper) => paper.tags.includes(selectedTag)) : academic.publications;
-  const hasAuthorRoles = academic.publications.some((paper) => paper.authors.some((author) => author.role));
 
   return (
     <section className="publications content-section" id="publications" aria-labelledby="publications-title">
@@ -20,7 +19,7 @@ export function Publications() {
           ))}
         </div>
       </div>
-      {hasAuthorRoles && <p className="publications-info-small">* indicates equal contribution, and † denotes the advising professor.</p>}
+      <p className="publications-info-small">* indicates equal contribution, and † denotes the advising professor.</p>
       <div className="publications-list" id="publication-list" aria-live="polite">
         {papers.map((paper) => (
           <article key={paper.id} className="publication-card" id={paper.id}>
@@ -28,7 +27,7 @@ export function Publications() {
               <Image src={paper.image} alt={paper.imageAlt} width={240} height={140} className="publication-image" />
             </a>
             <div className="publication-content">
-              <div className="publication-venue"><span className="venue-tag wip">{paper.venue} · {paper.year}</span></div>
+              <div className="publication-venue"><span className="venue-tag wip">{paper.venue}</span></div>
               <div className="publication-title-wrapper"><h3 className="publication-title"><a href={paper.paper} target="_blank" rel="noopener noreferrer">{paper.title}</a></h3></div>
               <p className="publication-authors">
                 {paper.authors.map((author, index) => {

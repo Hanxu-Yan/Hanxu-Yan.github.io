@@ -92,7 +92,7 @@ export const academic: AcademicProfile = {
         }
       ],
       "year": 2025,
-      "venue": "arXiv preprint",
+      "venue": "Preprint",
       "paper": "https://arxiv.org/abs/2506.07675",
       "code": "https://github.com/Yuyang-Song/QUITE"
     }
