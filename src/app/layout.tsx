@@ -14,8 +14,9 @@ export const metadata: Metadata = {
   title: home.title,
   description: home.description,
   alternates: { canonical: "/" },
-  openGraph: { title: home.title, description: home.description, url: baseURL, type: "website" },
-  twitter: { card: "summary_large_image", title: home.title, description: home.description },
+  icons: { icon: "/icon.png" },
+  openGraph: { title: home.title, description: home.description, url: baseURL, type: "website", images: [{ url: "/opengraph.png", width: 1200, height: 630, alt: "Hanxu Yan — Academic Homepage" }] },
+  twitter: { card: "summary_large_image", title: home.title, description: home.description, images: ["/opengraph.png"] },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
