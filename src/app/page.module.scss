@@ -1,0 +1,90 @@
+.section {
+  margin-bottom: 38px;
+  scroll-margin-top: 88px;
+
+  h2 {
+    display: inline-block;
+    margin: 0 0 23px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #8491a8;
+    color: var(--navy);
+    font-family: var(--font-heading), Georgia, serif;
+    font-size: 27px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: .35px;
+  }
+}
+
+.about { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 44px; align-items: start; }
+.profile {
+  text-align: center;
+  h1 { margin: 8px 0 1px; color: var(--navy); font-family: var(--font-heading), Georgia, serif; font-size: 30px; line-height: 1.15; font-weight: 700; }
+  p { margin: 6px 0 7px; color: #65738e; font-size: 13px; }
+}
+.avatar { width: 220px; height: 220px; object-fit: cover; border-radius: 6px; box-shadow: 0 3px 14px #1a2a4a24; }
+.social {
+  display: flex; justify-content: center; gap: 15px;
+  a { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 30px; color: var(--navy); font-size: 21px; }
+  a:hover { color: var(--link); transform: translateY(-1px); }
+}
+.biography {
+  padding-top: 0;
+  p { margin: 0 0 20px; }
+  strong { color: var(--navy); font-weight: 650; }
+}
+.callout { margin-top: 22px; padding: 13px 17px; border-left: 3px solid #c5a54c; border-radius: 2px; background: #fffaea; font-size: 14px; }
+.callout a { color: inherit; font-weight: 650; text-decoration: underline; text-underline-offset: 2px; }
+.sectionHeading { display: flex; flex-wrap: wrap; align-items: baseline; gap: 18px; }
+.sectionHeading h2 { margin-bottom: 15px; }
+.scholarLink { font-size: 12px; }
+.publications { border-top: 1px solid var(--line); }
+.publication { display: grid; grid-template-columns: 240px minmax(0, 1fr); align-items: center; gap: 28px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.thumbnail {
+  display: block; padding: 5px; border: 1px solid #d7dce5; border-radius: 7px; box-shadow: 0 3px 10px #1a2a4a12; background: #fff;
+  img { display: block; width: 100%; height: 140px; object-fit: contain; }
+}
+.paperContent {
+  min-width: 0;
+  h3 { margin: 5px 0 4px; font-family: var(--font-heading), Georgia, serif; font-size: 20px; font-weight: 700; line-height: 1.38; }
+  h3 a { color: var(--navy); }
+}
+.venue { display: inline-block; padding: 1px 7px; border-radius: 2px; background: #eef0f3; color: #465065; font-size: 12px; font-weight: 650; line-height: 1.7; }
+.authors { margin: 4px 0 7px; color: #727272; font-size: 13px; font-style: italic; line-height: 1.65; }
+.authors strong { color: var(--link); font-weight: 700; }
+.tags { display: flex; flex-wrap: wrap; gap: 5px; list-style: none; margin: 0 0 7px; padding: 0; }
+.tags li { padding: 0 5px; border-radius: 2px; background: #f0f2f6; color: #626e84; font-size: 11px; line-height: 1.6; }
+.paperLinks {
+  display: inline-flex; align-items: center; font-size: 13px; line-height: 1.5;
+  a + a { margin-left: 10px; padding-left: 10px; border-left: 1px solid #cfd5df; }
+}
+.abstract {
+  margin-top: 6px; color: #69758a; font-size: 12px;
+  summary { width: fit-content; cursor: pointer; }
+  p { margin: 7px 0 0; color: #565e6b; font-size: 13px; line-height: 1.7; }
+}
+.education {
+  display: flex; align-items: baseline; gap: 28px; margin: 0 0 23px; padding: 2px 0 2px 20px; border-left: 3px solid #5577ac;
+  h3 { margin: 0 0 4px; color: var(--navy); font-family: var(--font-heading), Georgia, serif; font-size: 21px; line-height: 1.3; }
+  p { margin: 0; color: #65738e; font-size: 14px; }
+}
+.period { color: var(--navy); font-size: 13px; font-weight: 600; }
+.contact { margin: 0 0 8px; font-size: 14px; }
+
+@media (max-width: 800px) {
+  .about { grid-template-columns: 190px minmax(0, 1fr); gap: 30px; }
+  .avatar { width: 190px; height: 190px; }
+  .publication { grid-template-columns: 200px minmax(0, 1fr); gap: 22px; }
+}
+@media (max-width: 640px) {
+  .section { margin-bottom: 32px; }
+  .section h2 { font-size: 26px; margin-bottom: 22px; }
+  .about { grid-template-columns: 1fr; gap: 26px; }
+  .avatar { width: 210px; height: 210px; }
+  .biography { font-size: 14px; }
+  .publication { grid-template-columns: 1fr; gap: 15px; padding: 22px 0; }
+  .thumbnail { width: 100%; max-width: 340px; }
+  .thumbnail img { height: 160px; }
+  .sectionHeading { gap: 15px; }
+  .sectionHeading h2 { margin-bottom: 15px; }
+}
