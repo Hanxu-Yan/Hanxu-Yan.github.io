@@ -20,6 +20,7 @@ section { scroll-margin-top: 4rem; margin-bottom: 0; }
 .timeline-list { margin-top: 0.2rem; }
 .edu-degree { margin-bottom: 0.4rem; }
 .exp-row-org { margin-bottom: 0.25rem; }
+.exp-row-org a { color: inherit; font-weight: inherit; }
 .publications-select { flex-wrap: wrap; }
 .publications-list { margin-top: 0.4rem; }
 .publication-image-link { display: block; flex-shrink: 0; line-height: 0; }

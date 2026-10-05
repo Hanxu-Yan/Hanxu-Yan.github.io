@@ -67,7 +67,7 @@ export default function Home() {
 
       {academic.education.length > 0 && <section className="content-section" id="education" aria-labelledby="education-title">
         <h2 className="card-title" id="education-title">Education</h2>
-        <div className="education-list timeline-list">{academic.education.map((item) => <article className="edu-row" key={item.institution}>
+        <div className="education-list timeline-list">{academic.education.map((item) => <article className="edu-row" key={item.institution + item.period.join("-")}>
           {item.period.length > 0 && <div className="edu-period">{item.period.map((line) => <span key={line}>{line}</span>)}</div>}
           <div className="edu-body">
             <h3 className="edu-degree">{item.degree}</h3>

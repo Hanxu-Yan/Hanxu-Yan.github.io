@@ -103,13 +103,45 @@ export const academic: AcademicProfile = {
   "education": [
     {
       "institution": "Sichuan University",
-      "degree": "Undergraduate studies",
-      "period": [],
       "link": "https://en.scu.edu.cn/",
-      "logo": "/images/scu.png"
+      "logo": "/images/scu.png",
+      "degree": "Computer Science and Technology",
+      "period": [
+        "2024.09 –",
+        "Present"
+      ]
+    },
+    {
+      "institution": "Sichuan University",
+      "link": "https://en.scu.edu.cn/",
+      "logo": "/images/scu.png",
+      "degree": "Mechanical Engineering",
+      "period": [
+        "2023.09 –",
+        "2024.06"
+      ]
     }
   ],
-  "experience": [],
+  "experience": [
+    {
+      "institution": "PDAIS Lab, Purdue University",
+      "description": "Research Intern",
+      "period": [
+        "2026.04 –",
+        "Present"
+      ],
+      "link": "https://www.cs.purdue.edu/homes/chunwei/"
+    },
+    {
+      "institution": "IDS Lab, Sichuan University",
+      "description": "Research Intern · Prof. Mingjie Tang's lab",
+      "period": [
+        "2024.12 –",
+        "2026.01"
+      ],
+      "link": "https://ids-lab-asia.github.io/"
+    }
+  ],
   "cv": "",
   "news": [],
   "awards": [],
