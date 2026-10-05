@@ -59,7 +59,9 @@ export default function Home() {
           {item.period.length > 0 && <div className="exp-row-period">{item.period.map((line) => <span key={line}>{line}</span>)}</div>}
           <div className="exp-row-body">
             <h3 className="exp-row-org">{item.link ? <a href={item.link} target="_blank" rel="noopener noreferrer">{item.institution}</a> : item.institution}</h3>
-            <div className="exp-row-role">{item.description}</div>
+            <div className="exp-row-role">
+              {item.description}{item.collaborator && <>, working with <a href={item.collaborator.link} target="_blank" rel="noopener noreferrer">{item.collaborator.name}</a></>}
+            </div>
             {item.projects && <ul className="exp-row-projects">{item.projects.map((project) => <li key={project}>{project}</li>)}</ul>}
           </div>
         </article>)}</div>

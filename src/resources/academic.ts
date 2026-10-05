@@ -28,7 +28,7 @@ type AcademicProfile = {
   interests: { title: string; description: string }[];
   publications: Publication[];
   education: { institution: string; degree: string; period: string[]; link: string; logo?: string }[];
-  experience: { institution: string; description: string; period: string[]; link?: string; projects?: string[] }[];
+  experience: { institution: string; description: string; period: string[]; link?: string; collaborator?: { name: string; link: string }; projects?: string[] }[];
   news: { date: string; text: string; link?: string }[];
   awards: string[];
   service: { label: string; text: string }[];
@@ -125,7 +125,11 @@ export const academic: AcademicProfile = {
   "experience": [
     {
       "institution": "PDAIS Lab, Purdue University",
-      "description": "Research Intern",
+      "description": "AI research intern",
+      "collaborator": {
+        "name": "Prof. Chunwei Liu",
+        "link": "https://www.cs.purdue.edu/homes/chunwei/"
+      },
       "period": [
         "2026.04 –",
         "Present"
@@ -134,7 +138,11 @@ export const academic: AcademicProfile = {
     },
     {
       "institution": "IDS Lab, Sichuan University",
-      "description": "Research Intern · Prof. Mingjie Tang's lab",
+      "description": "AI research intern",
+      "collaborator": {
+        "name": "Prof. Mingjie Tang",
+        "link": "https://merlintang.github.io/"
+      },
       "period": [
         "2024.12 –",
         "2026.01"
