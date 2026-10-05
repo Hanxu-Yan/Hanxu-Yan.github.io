@@ -29,13 +29,13 @@ export function Publications() {
             <div className="publication-content">
               <div className="publication-venue"><span className="venue-tag wip">{paper.venue}</span></div>
               <div className="publication-title-wrapper"><h3 className="publication-title"><a href={paper.paper} target="_blank" rel="noopener noreferrer">{paper.title}</a></h3></div>
-              <p className="publication-authors">
+              {paper.authors.length > 0 && <p className="publication-authors">
                 {paper.authors.map((author, index) => {
                   const symbol = author.role === "first" ? "*" : author.role === "second" ? "**" : author.role === "corresponding" ? "†" : "";
                   const name = author.name === person.name ? <strong className="author-self">{author.name}{symbol}</strong> : <>{author.name}{symbol}</>;
                   return <span key={author.name} title={author.role === "corresponding" ? "Corresponding author" : undefined}>{author.link ? <a href={author.link} target="_blank" rel="noopener noreferrer" className="author-link">{name}</a> : name}{index < paper.authors.length - 1 && ", "}</span>;
                 })}
-              </p>
+              </p>}
               <div className="publication-tags">{paper.tags.map((tag) => <span key={tag} className={tag === "Selected" ? "rainbow-tag-all" : "tag-item-show"}>#{tag}</span>)}</div>
               <div className="publication-links">
                 {paper.pdf && <a href={paper.pdf} target="_blank" rel="noopener noreferrer">PDF</a>}

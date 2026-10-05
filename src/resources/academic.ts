@@ -58,6 +58,82 @@ export const academic: AcademicProfile = {
   ],
   "publications": [
     {
+      "id": "jevdb",
+      "title": "Prune First, Decide Fast: Scalable Semantic Query Processing with JEVDB",
+      "authors": [
+        {
+          "name": "Zhengle Wang"
+        },
+        {
+          "name": "Hanxu Yan"
+        },
+        {
+          "name": "Fuheng Zhao"
+        },
+        {
+          "name": "Chunwei Liu",
+          "role": "corresponding"
+        }
+      ],
+      "year": 2026,
+      "venue": "Preprint",
+      "image": "/images/publications/jevdb.png",
+      "imageAlt": "JEVDB architecture: semantic query compilation, candidate pruning, and tiered execution",
+      "tags": [
+        "Semantic databases",
+        "Query optimization"
+      ],
+      "paper": "https://arxiv.org/abs/2610.02046",
+      "pdf": "https://arxiv.org/pdf/2610.02046",
+      "website": "https://jevdb.org/"
+    },
+    {
+      "id": "radar",
+      "title": "Fail Loudly: An Auditable Runtime for Agentic Data Analysis",
+      "authors": [
+        {
+          "name": "Hanxu Yan"
+        },
+        {
+          "name": "Langxuan Deng"
+        },
+        {
+          "name": "Zhengle Wang"
+        },
+        {
+          "name": "Yibo Wang"
+        },
+        {
+          "name": "Chunwei Liu"
+        }
+      ],
+      "year": 2026,
+      "venue": "Preprint",
+      "image": "/images/publications/radar.png",
+      "imageAlt": "RADAR workflow: source maps, query-aware exploration, and auditable execution",
+      "tags": [
+        "LLM agents",
+        "Data analysis"
+      ],
+      "paper": "https://arxiv.org/abs/2609.32528",
+      "pdf": "https://arxiv.org/pdf/2609.32528"
+    },
+    {
+      "id": "iquest-coder",
+      "title": "IQuest-Coder-V1 Technical Report",
+      "authors": [],
+      "year": 2026,
+      "venue": "Tech Report",
+      "image": "/images/publications/iquest-coder.png",
+      "imageAlt": "IQuest-Coder-V1 performance across coding and tool-use benchmarks",
+      "tags": [
+        "Code LLMs"
+      ],
+      "paper": "https://arxiv.org/abs/2603.16733",
+      "pdf": "https://arxiv.org/pdf/2603.16733",
+      "code": "https://github.com/IQuestLab/IQuest-Coder-V1"
+    },
+    {
       "id": "quite",
       "image": "/images/publications/quite.png",
       "imageAlt": "QUITE: LLM agents rewriting SQL with database feedback",
@@ -125,7 +201,7 @@ export const academic: AcademicProfile = {
   "experience": [
     {
       "institution": "PDAIS Lab, Purdue University",
-      "description": "AI research intern",
+      "description": "Research intern",
       "collaborator": {
         "name": "Prof. Chunwei Liu",
         "link": "https://www.cs.purdue.edu/homes/chunwei/"
@@ -138,7 +214,7 @@ export const academic: AcademicProfile = {
     },
     {
       "institution": "IDS Lab, Sichuan University",
-      "description": "AI research intern",
+      "description": "Research intern",
       "collaborator": {
         "name": "Prof. Mingjie Tang",
         "link": "https://merlintang.github.io/"
