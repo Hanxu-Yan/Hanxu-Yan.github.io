@@ -114,6 +114,7 @@ export const academic: AcademicProfile = {
       "image": "/images/publications/jevdb.png",
       "imageAlt": "JEVDB architecture: semantic query compilation, candidate pruning, and tiered execution",
       "tags": [
+        "Selected",
         "Semantic databases",
         "Query optimization"
       ],
@@ -147,6 +148,7 @@ export const academic: AcademicProfile = {
       "image": "/images/publications/radar.png",
       "imageAlt": "RADAR workflow: source maps, query-aware exploration, and auditable execution",
       "tags": [
+        "Selected",
         "LLM agents",
         "Data analysis"
       ],
