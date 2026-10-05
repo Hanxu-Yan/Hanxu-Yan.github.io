@@ -26,6 +26,7 @@ section { scroll-margin-top: 4rem; margin-bottom: 0; }
 .publication-image { object-fit: contain; background-color: #fff; }
 .publication-image-link { display: block; flex-shrink: 0; line-height: 0; }
 .publication-content { min-width: 0; }
+.venue-tag.tech-report { background-color: #dbeafe; color: #1e40af; }
 .author-self { color: #2e5090; font-weight: 900; }
 .tag-item-show { color: #888; }
 .publications-info-small { margin-top: 0; }

@@ -27,7 +27,7 @@ export function Publications() {
               <Image src={paper.image} alt={paper.imageAlt} width={240} height={140} className="publication-image" />
             </a>
             <div className="publication-content">
-              <div className="publication-venue"><span className="venue-tag wip">{paper.venue}</span></div>
+              <div className="publication-venue"><span className={`venue-tag ${paper.venue === "Tech Report" ? "tech-report" : "wip"}`}>{paper.venue}</span></div>
               <div className="publication-title-wrapper"><h3 className="publication-title"><a href={paper.paper} target="_blank" rel="noopener noreferrer">{paper.title}</a></h3></div>
               {paper.authors.length > 0 && <p className="publication-authors">
                 {paper.authors.map((author, index) => {
@@ -38,7 +38,6 @@ export function Publications() {
               </p>}
               <div className="publication-tags">{paper.tags.map((tag) => <span key={tag} className={tag === "Selected" ? "rainbow-tag-all" : "tag-item-show"}>#{tag}</span>)}</div>
               <div className="publication-links">
-                {paper.pdf && <a href={paper.pdf} target="_blank" rel="noopener noreferrer">PDF</a>}
                 <a href={paper.paper} target="_blank" rel="noopener noreferrer">Paper</a>
                 {paper.code && <a href={paper.code} target="_blank" rel="noopener noreferrer">Github</a>}
                 {paper.website && <a href={paper.website} target="_blank" rel="noopener noreferrer">Website</a>}
