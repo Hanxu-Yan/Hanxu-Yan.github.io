@@ -47,7 +47,7 @@ export const academic: AcademicProfile = {
       },
       ". I previously conducted research at the ",
       {
-        "text": "IDS Lab",
+        "text": "IDs Lab",
         "link": "https://ids-lab-asia.github.io/"
       },
       " under the supervision of ",
@@ -250,7 +250,7 @@ export const academic: AcademicProfile = {
       "link": "https://www.cs.purdue.edu/homes/chunwei/"
     },
     {
-      "institution": "IDS Lab, Sichuan University",
+      "institution": "IDs Lab, Sichuan University",
       "description": "Research intern",
       "collaborator": {
         "name": "Prof. Mingjie Tang",
