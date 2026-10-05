@@ -73,7 +73,7 @@ export const academic: AcademicProfile = {
       "."
     ],
     [
-      "My research focuses on the intersection of AI and database systems. My current research interest is semantic databases. I study how to combine model-based semantic understanding with relational query processing to support queries over both structured and unstructured data. My current work explores semantic operators for filtering, joining, and ranking, together with query optimization techniques that reduce unnecessary model calls and improve execution efficiency. I am also interested in LLM-based query rewriting and auditable data-analysis agents, aiming to make AI-powered data systems more reliable and easier to use."
+      "My research focuses on the intersection of AI and database systems. My current research interest is semantic databases, where I explore how to combine semantic understanding with efficient query processing over structured and unstructured data. I am also interested in LLM-based query optimization and reliable data-analysis agents, aiming to make AI-powered data systems more efficient and trustworthy."
     ]
   ],
   "interests": [
