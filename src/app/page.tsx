@@ -36,7 +36,9 @@ export default function Home() {
           </div>
           <div className="about-text">
             <div className="intro-text">
-              {academic.introduction.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              {academic.introduction.map((paragraph, index) => <p key={index}>
+                {paragraph.map((part, partIndex) => typeof part === "string" ? part : <a key={partIndex} href={part.link} target="_blank" rel="noopener noreferrer">{part.text}</a>)}
+              </p>)}
             </div>
           </div>
         </div>

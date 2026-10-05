@@ -24,7 +24,7 @@ export type Publication = {
 type AcademicProfile = {
   affiliation: string;
   subtitle: string;
-  introduction: string[];
+  introduction: (string | { text: string; link: string })[][];
   interests: { title: string; description: string }[];
   publications: Publication[];
   education: { institution: string; degree: string; period: string[]; link: string; logo?: string }[];
@@ -39,8 +39,42 @@ export const academic: AcademicProfile = {
   "affiliation": "Sichuan University",
   "subtitle": "Research intern at PDAIS",
   "introduction": [
-    "I am an undergraduate student majoring in Computer Science and Technology at Sichuan University. I previously conducted research at the IDS Lab under the supervision of Prof. Mingjie Tang. I am currently a research intern at the Purdue Data & AI System (PDAIS) Lab at Purdue University, working with Prof. Chunwei Liu.",
-    "My research focuses on the intersection of AI and database systems, especially semantic databases. I study how to combine model-based semantic understanding with relational query processing to support queries over both structured and unstructured data. My current work explores semantic operators for filtering, joining, and ranking, together with query optimization techniques that reduce unnecessary model calls and improve execution efficiency. I am also interested in LLM-based query rewriting and auditable data-analysis agents, aiming to make AI-powered data systems more reliable and easier to use."
+    [
+      "I am an undergraduate student majoring in Computer Science and Technology at ",
+      {
+        "text": "Sichuan University",
+        "link": "https://en.scu.edu.cn/"
+      },
+      ". I previously conducted research at the ",
+      {
+        "text": "IDS Lab",
+        "link": "https://ids-lab-asia.github.io/"
+      },
+      " under the supervision of ",
+      {
+        "text": "Prof. Mingjie Tang",
+        "link": "https://merlintang.github.io/"
+      },
+      ". I am currently a research intern at the ",
+      {
+        "text": "Purdue Data & AI System (PDAIS) Lab",
+        "link": "https://www.cs.purdue.edu/homes/chunwei/"
+      },
+      " at ",
+      {
+        "text": "Purdue University",
+        "link": "https://www.purdue.edu/"
+      },
+      ", working with ",
+      {
+        "text": "Prof. Chunwei Liu",
+        "link": "https://www.cs.purdue.edu/homes/chunwei/"
+      },
+      "."
+    ],
+    [
+      "My research focuses on the intersection of AI and database systems. My current research interest is semantic databases. I study how to combine model-based semantic understanding with relational query processing to support queries over both structured and unstructured data. My current work explores semantic operators for filtering, joining, and ranking, together with query optimization techniques that reduce unnecessary model calls and improve execution efficiency. I am also interested in LLM-based query rewriting and auditable data-analysis agents, aiming to make AI-powered data systems more reliable and easier to use."
+    ]
   ],
   "interests": [
     {
