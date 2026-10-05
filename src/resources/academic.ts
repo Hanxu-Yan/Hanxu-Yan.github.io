@@ -39,8 +39,8 @@ export const academic: AcademicProfile = {
   "affiliation": "Sichuan University",
   "subtitle": "Research intern at PDAIS",
   "introduction": [
-    "I am an undergraduate at Sichuan University, China, working on AI for databases (AI4DB).",
-    "My research explores how language models can help people query data and make database systems more efficient. I am also an open-source enthusiast."
+    "I am an undergraduate student majoring in Computer Science and Technology at Sichuan University. I previously conducted research at the IDS Lab under the supervision of Prof. Mingjie Tang. I am currently a research intern at the Purdue Data & AI System (PDAIS) Lab at Purdue University, working with Prof. Chunwei Liu.",
+    "My research focuses on the intersection of AI and database systems, especially semantic databases. I study how to combine model-based semantic understanding with relational query processing to support queries over both structured and unstructured data. My current work explores semantic operators for filtering, joining, and ranking, together with query optimization techniques that reduce unnecessary model calls and improve execution efficiency. I am also interested in LLM-based query rewriting and auditable data-analysis agents, aiming to make AI-powered data systems more reliable and easier to use."
   ],
   "interests": [
     {
@@ -104,7 +104,8 @@ export const academic: AcademicProfile = {
           "name": "Yibo Wang"
         },
         {
-          "name": "Chunwei Liu"
+          "name": "Chunwei Liu",
+          "role": "corresponding"
         }
       ],
       "year": 2026,

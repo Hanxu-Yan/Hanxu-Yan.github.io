@@ -37,7 +37,6 @@ export default function Home() {
           <div className="about-text">
             <div className="intro-text">
               {academic.introduction.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-              <p><strong>Research interests:</strong> {academic.interests.map((interest) => interest.title).join(", ")}.</p>
             </div>
           </div>
         </div>
