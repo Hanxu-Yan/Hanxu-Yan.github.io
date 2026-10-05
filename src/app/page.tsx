@@ -21,7 +21,7 @@ export default function Home() {
         <h2 className="card-title" id="about-title">About Me</h2>
         <div className="about-layout">
           <div className="about-profile">
-            <Image src={person.avatar} alt="Hanxu Yan's cat avatar from GitHub" width={220} height={220} priority className="profile-pic" />
+            <Image src={person.avatar} alt="Hanxu Yan" width={1279} height={1740} priority className="profile-pic" />
             <div className="hero-meta">
               <h1 className="meta-name">{person.name}</h1>
               <div className="meta-subtitle">{academic.subtitle}</div>

@@ -1,6 +1,6 @@
 export const person = {
   name: "Hanxu Yan",
-  avatar: "/images/hanxu-avatar.jpg",
+  avatar: "/images/hanxu-photo.jpg",
   email: "hanxuyan888@gmail.com",
 };
 

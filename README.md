@@ -26,7 +26,8 @@ The preview listens at http://127.0.0.1:3000. Set `PORT=3002` if the port is occ
 
 - `src/resources/content.tsx`: name, avatar, email, profile links, and metadata.
 - `src/resources/academic.ts`: biography, research interests, publications, education, news, internships, awards, and academic service.
-- `public/images/hanxu-avatar.jpg`: personal GitHub avatar.
+- `public/images/hanxu-photo.jpg`: profile photograph supplied by Hanxu Yan.
+- `public/images/hanxu-avatar.jpg`: original GitHub cat avatar, used to create `public/icon.png` for the browser favicon.
 - `src/resources/reference/`: CSS adapted from the reference repository.
 - `src/resources/custom.css`: semantic HTML, local font, and accessibility adjustments.
 - `src/components/Publications.tsx`: publication rendering and All / Selected filtering.
