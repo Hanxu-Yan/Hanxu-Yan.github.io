@@ -1,33 +1,49 @@
 "use client";
 
-import { useState, useRef } from "react";
-import { FaCat } from "react-icons/fa6";
+import Image from "next/image";
+import { useRef, useState } from "react";
+import { academic } from "@/resources/academic";
 import { person } from "@/resources/content";
 
+const navigation = [
+  { id: "about", label: "About", visible: true },
+  { id: "news", label: "News", visible: academic.news.length > 0 },
+  { id: "publications", label: "Publications", visible: academic.publications.length > 0 },
+  { id: "internship", label: "Internship", visible: academic.experience.length > 0 },
+  { id: "education", label: "Education", visible: academic.education.length > 0 },
+  { id: "awards", label: "Awards", visible: academic.awards.length > 0 },
+  { id: "more", label: "More", visible: academic.service.length > 0 },
+].filter((item) => item.visible);
+
 export function Header() {
-  const [open, setOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const toggle = useRef<HTMLButtonElement>(null);
-  const links = ["About", "Publications", "Education", "Contact"];
+
+  function navigate(id: string) {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    document.getElementById(id)?.scrollIntoView({ behavior: reduceMotion ? "instant" : "smooth", block: "start" });
+    setMenuOpen(false);
+  }
 
   return (
     <>
       <a className="skip-link" href="#main-content">Skip to content</a>
-      <header className="site-header">
-        <div className="header-inner" onKeyDown={(event) => {
-          if (event.key === "Escape" && open) {
-            setOpen(false);
-            toggle.current?.focus();
-          }
-        }}>
-          <a className="wordmark" href="#about" onClick={() => setOpen(false)}>
-            <FaCat aria-hidden="true" />
-            <span>{person.name}</span>
+      <header className={`header-wrapper ${menuOpen ? "menu-open" : ""}`} onKeyDown={(event) => {
+        if (event.key === "Escape" && menuOpen) {
+          setMenuOpen(false);
+          toggle.current?.focus();
+        }
+      }}>
+        <div className="header-container">
+          <a className="header-name" href="#about" onClick={() => setMenuOpen(false)}>
+            <Image src="/images/header-cat.png" alt="" width={36} height={36} className="header-logo" />
+            <span className="name-main">{person.name}</span>
           </a>
-          <button ref={toggle} type="button" className="menu-toggle" aria-controls="main-navigation" aria-expanded={open} aria-label={open ? "Close navigation" : "Open navigation"} onClick={() => setOpen(!open)}>
-            <span aria-hidden="true">{open ? "✕" : "☰"}</span>
+          <button ref={toggle} type="button" className={`hamburger ${menuOpen ? "open" : ""}`} onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen} aria-controls="main-navigation">
+            <span className="bar bar1" /><span className="bar bar2" /><span className="bar bar3" />
           </button>
-          <nav id="main-navigation" aria-label="Main navigation" className={open ? "navigation is-open" : "navigation"}>
-            {links.map((label) => <a key={label} href={`#${label.toLowerCase()}`} onClick={() => setOpen(false)}>{label}</a>)}
+          <nav id="main-navigation" className={`header-nav ${menuOpen ? "show" : ""}`} aria-label="Main navigation">
+            {navigation.map((item) => <button key={item.id} type="button" className="nav-item" onClick={() => navigate(item.id)}>{item.label}</button>)}
           </nav>
         </div>
       </header>

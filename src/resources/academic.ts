@@ -1,16 +1,24 @@
+export type Author = {
+  name: string;
+  role?: "first" | "second" | "advisor";
+  link?: string;
+};
+
 export type Publication = {
   id: string;
   title: string;
-  authors: string[];
+  authors: Author[];
   year: number;
   venue: string;
-  summary: string;
   image: string;
   imageAlt: string;
   tags: string[];
   paper: string;
   code?: string;
   website?: string;
+  pdf?: string;
+  video?: string;
+  dataset?: string;
 };
 
 type AcademicProfile = {
@@ -18,8 +26,11 @@ type AcademicProfile = {
   introduction: string[];
   interests: { title: string; description: string }[];
   publications: Publication[];
-  education: { institution: string; description: string; period: string }[];
-  experience: { institution: string; description: string; period: string }[];
+  education: { institution: string; degree: string; period: string[]; link: string; logo?: string }[];
+  experience: { institution: string; description: string; period: string[]; link?: string; projects?: string[] }[];
+  news: { date: string; text: string; link?: string }[];
+  awards: string[];
+  service: { label: string; text: string }[];
   cv: string;
 };
 
@@ -45,47 +56,43 @@ export const academic: AcademicProfile = {
   ],
   "publications": [
     {
-      "id": "agro-sql",
-      "image": "/images/publications/agro-sql.png",
-      "imageAlt": "AGRO-SQL framework: data synthesis and agentic optimization",
-      "tags": ["Text-to-SQL", "LLM agents"],
-      "title": "AGRO-SQL: Agentic Group-Relative Optimization with High-Fidelity Data Synthesis",
-      "authors": [
-        "Cehua Yang",
-        "Dongyu Xiao",
-        "Junming Lin",
-        "Yuyang Song",
-        "Hanxu Yan",
-        "Shawn Guo",
-        "Wei Zhang",
-        "Jian Yang",
-        "Mingjie Tang",
-        "Bryan Dai"
-      ],
-      "year": 2025,
-      "venue": "arXiv preprint",
-      "summary": "A Text-to-SQL framework that combines verified synthetic training data with reinforcement learning for an agent that uses execution feedback.",
-      "paper": "https://arxiv.org/abs/2512.23366"
-    },
-    {
       "id": "quite",
       "image": "/images/publications/quite.png",
-      "imageAlt": "QUITE system overview: agents rewriting SQL with database feedback",
-      "tags": ["Query optimization", "AI4DB"],
+      "imageAlt": "QUITE: LLM agents rewriting SQL with database feedback",
+      "tags": [
+        "Selected",
+        "Query optimization",
+        "AI4DB"
+      ],
       "title": "QUITE: A Query Rewrite System Beyond Rules with LLM Agents",
       "authors": [
-        "Yuyang Song",
-        "Hanxu Yan",
-        "Jiale Lao",
-        "Yibo Wang",
-        "Yufei Li",
-        "Yuanchun Zhou",
-        "Jianguo Wang",
-        "Mingjie Tang"
+        {
+          "name": "Yuyang Song"
+        },
+        {
+          "name": "Hanxu Yan"
+        },
+        {
+          "name": "Jiale Lao"
+        },
+        {
+          "name": "Yibo Wang"
+        },
+        {
+          "name": "Yufei Li"
+        },
+        {
+          "name": "Yuanchun Zhou"
+        },
+        {
+          "name": "Jianguo Wang"
+        },
+        {
+          "name": "Mingjie Tang"
+        }
       ],
       "year": 2025,
       "venue": "arXiv preprint",
-      "summary": "An agent-based system that uses database feedback to rewrite SQL queries beyond a fixed set of optimization rules.",
       "paper": "https://arxiv.org/abs/2506.07675",
       "code": "https://github.com/Yuyang-Song/QUITE"
     }
@@ -93,10 +100,15 @@ export const academic: AcademicProfile = {
   "education": [
     {
       "institution": "Sichuan University",
-      "description": "Undergraduate studies · China",
-      "period": ""
+      "degree": "Undergraduate studies",
+      "period": [],
+      "link": "https://en.scu.edu.cn/",
+      "logo": "/images/scu.png"
     }
   ],
   "experience": [],
-  "cv": ""
+  "cv": "",
+  "news": [],
+  "awards": [],
+  "service": []
 };

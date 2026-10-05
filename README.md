@@ -1,6 +1,8 @@
 # Hanxu Yan — Academic Homepage
 
-English academic homepage for https://hanxu-yan.github.io, with a classic layout visually inspired by [Chujie Gao's website](https://flossiee.github.io/). The layout is implemented independently; her biography, photographs, and publications are not included.
+English academic homepage at https://hanxu-yan.github.io.
+
+The layout, navigation, publication filters, responsive menu, and section styles are adapted directly from [Chujie Gao's source repository](https://github.com/Flossiee/Flossiee.github.io/tree/ceea158c3e75294db72c6eae2cfaf16af98419ef). Her personal biography, publications, and experience are not included.
 
 ## Local development
 
@@ -11,41 +13,45 @@ npm ci
 npm run dev
 ```
 
-To preview the exact static files deployed to GitHub Pages:
+To preview the static files deployed to GitHub Pages:
 
 ```bash
 npm run build
 npm start
 ```
 
-The preview listens at http://127.0.0.1:3000. Set `PORT=3001` if needed.
+The preview listens at http://127.0.0.1:3000. Set `PORT=3002` if the port is occupied.
 
 ## Edit content
 
-- `src/resources/content.tsx`: name, avatar, email, profile links, and page metadata.
-- `src/resources/academic.ts`: biography, research interests, publications, and education.
-- `public/images/hanxu-avatar.jpg`: current GitHub avatar; replace it with a personal photo if desired.
-- `public/images/publications/`: publication overview figures.
-- `src/app/page.module.scss` and `src/resources/custom.css`: layout and appearance.
+- `src/resources/content.tsx`: name, avatar, email, profile links, and metadata.
+- `src/resources/academic.ts`: biography, research interests, publications, education, news, internships, awards, and academic service.
+- `public/images/hanxu-avatar.jpg`: personal GitHub avatar.
+- `src/resources/reference/`: CSS adapted from the reference repository.
+- `src/resources/custom.css`: semantic HTML, local font, and accessibility adjustments.
+- `src/components/Publications.tsx`: publication rendering and All / Selected filtering.
+- `src/components/Header.tsx`: navigation and animated mobile menu.
 
-Publication records have a title, authors, year, venue, paper URL, thumbnail, image description, and topic tags. Optional code and project URLs appear only when supplied. The publication overview expands with a native details element.
+News, Internship, Awards, and Academic Service appear only when their corresponding arrays contain entries; navigation buttons appear with them. More links to Academic Service, matching the reference.
+
+A publication tagged `Selected` appears under both All and Selected. Clicking Selected again resets the filter to All, matching the reference. Currently QUITE is the sole displayed publication. There is no contact callout, separate Contact section, or expandable publication summary.
+
+Author links and contribution markers are optional. Do not assign contribution roles or publication venues without confirming them. Education dates, degree subject, supervisors, awards, internships, and a CV are omitted until confirmed.
 
 ## GitHub Pages
 
-The repository must be named `Hanxu-Yan.github.io`. In **Settings → Pages → Build and deployment**, select **GitHub Actions** as the source.
+In **Settings → Pages → Build and deployment**, choose **GitHub Actions**.
 
-The workflow at `.github/workflows/deploy.yml` builds with Node.js 22, uploads `out/`, and deploys it to GitHub Pages on pushes to `main`. The site uses static export, local fonts and images, and no server API routes.
+The workflow at `.github/workflows/deploy.yml` builds with Node.js 22 and deploys `out/` on pushes to `main`. It can also be started manually from Actions. The site uses static export and local fonts and images.
 
 For a custom domain, set `NEXT_PUBLIC_SITE_URL` before building and configure the domain in GitHub Pages. The default canonical URL is `https://hanxu-yan.github.io`.
 
-## Content sources and remaining details
+## Sources and attribution
 
-- Affiliation, undergraduate status, AI4DB interest, and email come from [the public GitHub profile](https://github.com/Hanxu-Yan) and [profile README](https://github.com/Hanxu-Yan/Hanxu-Yan).
-- [AGRO-SQL](https://arxiv.org/abs/2512.23366) and [QUITE](https://arxiv.org/abs/2506.07675) include Hanxu Yan in the author lists. Both are labeled arXiv preprints; no conference acceptance is inferred.
-- AGRO-SQL thumbnail: Figure 1 from [arXiv HTML](https://arxiv.org/html/2512.23366v1).
-- QUITE thumbnail: system overview from [arXiv HTML](https://arxiv.org/html/2506.07675v3).
-- QUITE uses the title on its arXiv abstract record; the v3 body has a minor title wording difference.
-- Education dates, degree subject, supervisors, awards, internships, and a CV have not been confirmed and are omitted.
-- RADAR and JEVDB have not been added because authorship and current publication details need confirmation.
+- Layout and styling: [Flossiee/Flossiee.github.io](https://github.com/Flossiee/Flossiee.github.io), commit `ceea158c3e75294db72c6eae2cfaf16af98419ef`; adapted from App.css, index.css, Header, About, Publications, Education, Internship, News, SelectedAwards, More, Footer, and the section CSS files. Source comments in the adapted CSS identify this revision.
+- The header cat illustration and Sichuan University logo come from the same reference repository.
+- Affiliation, undergraduate status, AI4DB interest, and email come from [Hanxu Yan's public GitHub profile](https://github.com/Hanxu-Yan) and [profile README](https://github.com/Hanxu-Yan/Hanxu-Yan).
+- [QUITE](https://arxiv.org/abs/2506.07675) includes Hanxu Yan in its author list. It is labeled an arXiv preprint; no conference acceptance is inferred.
+- QUITE's figure comes from its [arXiv HTML](https://arxiv.org/html/2506.07675v3). The displayed title follows the arXiv abstract record.
 
-This project began with [Magic Portfolio by Once UI](https://github.com/once-ui-system/magic-portfolio). Its visual layout has been replaced and the unused portfolio modules removed. The original CC BY-NC 4.0 notice and attribution are retained in `LICENSE` and the footer. Third-party figures remain credited to their linked papers.
+The project was initially adapted from [Magic Portfolio by Once UI](https://github.com/once-ui-system/magic-portfolio). Its visual layout and portfolio modules have since been replaced. The original [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) notice is retained in `LICENSE`; this README records the attribution and modifications. Third-party source, logos, and paper figures remain attributed to their respective authors.

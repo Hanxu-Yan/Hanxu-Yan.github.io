@@ -6,8 +6,8 @@ import { Footer } from "@/components/Footer";
 import { home } from "@/resources/content";
 import { baseURL } from "@/resources/site";
 
-const bodyFont = Inter({ subsets: ["latin"], display: "swap", variable: "--font-body" });
-const headingFont = EB_Garamond({ subsets: ["latin"], display: "swap", variable: "--font-heading" });
+const bodyFont = Inter({ subsets: ["latin"], style: ["normal", "italic"], display: "swap", variable: "--font-body" });
+const headingFont = EB_Garamond({ subsets: ["latin"], style: ["normal", "italic"], display: "swap", variable: "--font-heading" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseURL),
@@ -23,9 +23,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={`${bodyFont.variable} ${headingFont.variable}`}>
       <body>
-        <Header />
-        <main id="main-content" className="main-content">{children}</main>
-        <Footer />
+        <div className="App">
+          <Header />
+          <main id="main-content" className="main-content">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

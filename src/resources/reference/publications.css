@@ -1,0 +1,234 @@
+/* Adapted from Flossiee/Flossiee.github.io, commit ceea158. */
+.publications-select{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+.publications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e0e2e8;
+}
+
+.publication-card {
+    display: flex;
+    box-shadow: none;
+    align-items: center;
+    padding-top: 0.5rem;
+    border-top: 1px solid #e0e2e8;
+}
+
+.publication-image {
+    height: 140px;
+    width: 240px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 1.6rem;
+    border: 2px solid #e0e2e8;
+    box-shadow: 0 2px 8px rgba(26, 42, 74, 0.08), 0 8px 16px rgba(26, 42, 74, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, filter 0.3s ease;
+    position: relative;
+    filter: brightness(1);
+    cursor: pointer;
+}
+
+.publication-image:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(26, 42, 74, 0.16), 0 16px 32px rgba(26, 42, 74, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    filter: brightness(1.05);
+}
+
+.publication-image:active {
+    transform: translateY(-6px) scale(0.98);
+}
+
+.publication-content {
+    flex: 1;
+    display: flex;
+    min-height: 100px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.publication-title-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.publication-venue {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.publication-title {
+    margin-top: 4px;
+    font-family: var(--font-heading), 'Georgia', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1a2a4a;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.publication-title:hover {
+    color: #2e5090;
+}
+
+@media (max-width: 1000px) {
+    .publication-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .publication-image {
+        width: calc(100vw - 4rem);
+        height: auto;
+        object-fit: cover;
+        border-radius: 4px;
+        margin: 0.5rem;
+        border: 1px solid #e0e2e8;
+    }
+}
+.publication-authors {
+    margin: 4px 0 0 0;
+    font-size: 0.8rem;
+    font-style: italic;
+    font-family: var(--font-body), sans-serif;
+    color: #5a5a5a;
+}
+
+.author-link {
+    color: #3a3a3a;
+    text-decoration: none;
+}
+
+.author-link:hover {
+    color: #2e5090;
+    text-decoration: underline;
+}
+
+.venue-tag {
+    display: inline-block;
+    padding: 2px 10px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    border-radius: 3px;
+    color: #000;
+    font-family: var(--font-body), sans-serif;
+    letter-spacing: 0.03em;
+}
+
+.venue-tag.conference {
+    background: linear-gradient(135deg, #81caf5 0%, #fff5bf 100%);
+}
+.venue-tag.wip {
+    background-color: #dbdbde;
+}
+
+.publication-links {
+    margin-top: 4px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.publication-links a {
+    color: #2e5090;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-family: var(--font-body), sans-serif;
+    transition: color 0.2s ease;
+}
+
+.publication-links a:hover {
+    text-decoration: underline;
+    color: #1a2a4a;
+}
+
+.publication-links a + a::before {
+    content: "|";
+    margin: 0 8px;
+    font-weight: 400;
+    color: #c0c8d8;
+}
+
+.publication-tags {
+    margin: 4px 0 0 0;
+}
+
+.tag-item-show {
+    margin-right: 4px;
+    white-space: nowrap;
+    display: inline-block;
+    background-color: #f0f2f8;
+    border-radius: 3px;
+    padding: 0px 8px;
+    font-size: 0.7rem;
+    color: #5a6a8a;
+    font-family: var(--font-body), sans-serif;
+}
+
+.rainbow-tag-all {
+    background: #d5e8ff;
+    color: #2e5090;
+    border-radius: 3px;
+    padding: 0px 8px;
+    white-space: nowrap;
+    font-weight: 600;
+    display: inline-block;
+    margin-right: 4px;
+    font-size: 0.7rem;
+}
+
+.publication-title-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.publications-info-small{
+    color: #9aa0b0;
+    font-size: 0.75rem;
+    font-style: italic;
+    margin-bottom: 0.4rem;
+    font-family: var(--font-body), sans-serif;
+}
+
+.tag-buttons-filter {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.tag-button {
+    font-family: var(--font-body), sans-serif;
+    font-size: 0.8rem;
+    padding: 4px 12px;
+    border-radius: 4px;
+    border: 1px solid #e0e2e8;
+    background-color: #fafbfc;
+    color: #5a6a8a;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.tag-button:hover {
+    border-color: #2e5090;
+    background-color: #f0f4ff;
+    color: #2e5090;
+}
+
+.tag-button.active {
+    background-color: var(--tag-color, #2e5090);
+    color: white;
+    border-color: var(--tag-color, #2e5090);
+    font-weight: 500;
+}
+
+.tag-button.active:hover {
+    opacity: 0.9;
+}
