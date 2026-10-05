@@ -36,7 +36,7 @@ export function Header() {
       }}>
         <div className="header-container">
           <a className="header-name" href="#about" onClick={() => setMenuOpen(false)}>
-            <Image src="/images/header-cat.png" alt="" width={36} height={36} className="header-logo" />
+            <Image src="/images/header-panda.png" alt="" width={36} height={36} className="header-logo" />
             <span className="name-main">{person.name}</span>
           </a>
           <button ref={toggle} type="button" className={`hamburger ${menuOpen ? "open" : ""}`} onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen} aria-controls="main-navigation">

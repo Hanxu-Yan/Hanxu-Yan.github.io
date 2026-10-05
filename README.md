@@ -49,7 +49,7 @@ For a custom domain, set `NEXT_PUBLIC_SITE_URL` before building and configure th
 ## Sources and attribution
 
 - Layout and styling: [Flossiee/Flossiee.github.io](https://github.com/Flossiee/Flossiee.github.io), commit `ceea158c3e75294db72c6eae2cfaf16af98419ef`; adapted from App.css, index.css, Header, About, Publications, Education, Internship, News, SelectedAwards, More, Footer, and the section CSS files. Source comments in the adapted CSS identify this revision.
-- The header cat illustration and Sichuan University logo come from the same reference repository.
+- The Sichuan University logo comes from the same reference repository. The cartoon panda header icon was generated for this site with the built-in image_gen tool; see [the generation record](docs/panda-generation.md) for its prompt.
 - Affiliation, undergraduate status, AI4DB interest, and email come from [Hanxu Yan's public GitHub profile](https://github.com/Hanxu-Yan) and [profile README](https://github.com/Hanxu-Yan/Hanxu-Yan).
 - [QUITE](https://arxiv.org/abs/2506.07675) includes Hanxu Yan in its author list. It is labeled an arXiv preprint; no conference acceptance is inferred.
 - QUITE's figure comes from its [arXiv HTML](https://arxiv.org/html/2506.07675v3). The displayed title follows the arXiv abstract record.
