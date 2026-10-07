@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { EB_Garamond, Inter } from "next/font/google";
 import "@/resources/custom.css";
 import { Header } from "@/components/Header";
@@ -23,6 +24,15 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={`${bodyFont.variable} ${headingFont.variable}`}>
       <body>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-K1S8C3FX94" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-K1S8C3FX94');
+          `}
+        </Script>
         <div className="App">
           <Header />
           <main id="main-content" className="main-content">{children}</main>
